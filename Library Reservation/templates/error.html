@@ -1,0 +1,19 @@
+{% with messages = get_flashed_messages() %}  
+{% if messages %}  
+      {% for message in messages %}  
+           <p>{{ message }}</p>
+      {% endfor %}  
+{% endif %}  
+{% endwith %}  
+
+<div class="container">
+    <div class="center">
+      <button onclick="myFunction()">Redirect to Home Page</button>
+
+
+ <script>
+ function myFunction() {
+   location.replace("/dashboard/{{user}}")
+ }
+
+</script>

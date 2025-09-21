@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<h4>Congratulations, {{user}}, You have reserved {{selected_room}} at {{selected_time}}. This reservation was made at {{selected_lib}}</h4>
+<div class="container">
+    <div class="center">
+      <button onclick="myFunction()">Redirect to Home Page</button>
+
+
+ <script>
+ function myFunction() {
+   location.replace("/dashboard/{{user}}")
+ }
+ 
+ </script>
+ </script>
+</body>
+</head>
+</html>

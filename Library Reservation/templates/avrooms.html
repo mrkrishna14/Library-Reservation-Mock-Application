@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h3>These are the available rooms:</h3>
+
+<body>
+    <form action="/finalize" method="POST">
+      <p>You selected: {{ sel_time }} at: {{ sel_lib }}</p>
+        <select name="rooms" method="GET" style="width: 100px;" action="/">
+          <option value="{{rl[0]}}" selected>{{rl[0]}}</option>
+          {% for room in rl[1:] %}
+          <option value="{{room}}">{{room}}</option>
+          {% endfor %}
+        </select>
+
+        <!--<select name="lib" method="GET" action="/">
+            <option value="{{ll[0]}}" selected>{{sel_lib}}</option>
+            {% for library in ll %}
+            <option value="{{library}}" {% if library == sel_lib %} selected {% endif %}>{{library}}</option>
+            {% endfor %}
+        </select>-->
+        <input type="submit" value="Reserve">
+      </form>
+
+</body>
+</head>
+</html>

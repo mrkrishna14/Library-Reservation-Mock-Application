@@ -1,0 +1,18 @@
+<h3>Hello {{ user }}, you have successfully canceled your reservation.</h3>
+<br>
+<br>
+<p>Please keep in mind that you will be able to reserve a room every 24 hours.</p>
+<br><br>
+<div class="container">
+    <div class="center">
+      <button onclick="myFunction()">Redirect to Home Page</button>
+
+
+ <script>
+ function myFunction() {
+   location.replace("/dashboard/{{user}}")
+ }
+ 
+ </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/dashcss.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Hello You are logged in</h1>
+    <p>Welcome to the library reservation app. Here you can choose rooms that you would like to reserve.</p>
+    
+    
+
+    <img src="https://bit.ly/3HfJq8r" alt="library room" width="200" height="200">
+    <style>
+      
+    </style>
+
+    <div class="dropdown">
+        <button class="dropbtn" style="margin: 15px;">Room 1</button>
+        <div class="dropdown-content">
+        <a href="{{url_for('confirm')}}">10-11</a>
+        <a href="{{url_for('confirm')}}">11-12</a>
+        <a href="{{url_for('confirm')}}">12-1</a>
+        </div>
+        <p id="cap1"> Capcity: 5</p>
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn" style="margin: 15px;">Room 2</button>
+        <div class="dropdown-content">
+        <a href="#">10-11</a>
+        <a href="#">11-12</a>
+        <a href="#">12-1</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn" style="margin: 15px;">Room 3 </button>
+        <div class="dropdown-content">
+        <a href="#">10-11</a>
+        <a href="#">11-12</a>
+        <a href="#">12-1</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" style="margin: 15px;">Room 4</button>
+        <div class="dropdown-content">
+        <a href="#">10-11</a>
+        <a href="#">11-12</a>
+        <a href="#">12-1</a>
+        </div>
+      </div>
+      
+
+    
+
+    <a href="{{url_for('logout')}}">Press here to logout</a>
+</body>
+</html>

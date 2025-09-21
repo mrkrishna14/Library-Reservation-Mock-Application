@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/availablecourts.css" />
+
+  </head>
+  <style>
+
+    input[type=submit] {
+      background-color: lightskyblue;
+      border: green;
+      color:black ;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    select {
+    width: 280px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+  }
+
+  input[type=text] {
+    width: 250px;
+    padding: 12px 20px;
+    height: 34px;
+    box-sizing: border-box;
+  }
+
+  label {
+      font-weight: bold;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+    }
+  
+  </style>
+  <body>
+    <h1>The courts dropdown will display the courts that are available based on the time that you chose.</h1>
+    <!--<form action="/search" method="post">
+      <select name="Available Times" id="Available Times">
+        <option disable selected value="Available Times"
+          >Available Times</option
+        >
+        <option ="9-11AM">9-11AM</option>
+        <option ="11-1PM">11-1PM</option>
+        <option ="1-3PM">1-3PM</option>
+        <option ="3-5PM">3-5PM</option>
+        <option ="5-7PM">5-7PM</option>
+        <option ="7-9PM">7-9PM</option>
+      </select> -->
+        <!-- {% for row in timeslist %}
+    <option value="{{ row[0] }}" {% if row[0] == state.choice %} selected{% endif %}>{{ row[1] }}</option>
+    {% endfor %}
+      </select>
+      <input type="submit" value="Search" />
+    </form>
+    {% block content %} {% endblock %}
+
+    <input type="submit" value="Register" />
+        </form>  -->
+
+    <form action="/register" method="POST">
+    <label for="location">Location:</label>
+    <select name="locationlist" method="GET" action="/">
+      {% for location in locationlist %}
+      <option value="{{location}}" {% if location == selected_location %} selected {% endif %}>{{location}}
+      </option>
+      {% endfor %}
+    </select>
+    <label for="time">The Time You Chose:</label>
+     <select name="timeslist" method="GET" action="/">
+        {% for time in timeslist %}
+        <option value="{{time}}" {% if time == state %} selected {% endif %}>{{time}}
+        </option>
+        {% endfor %}
+    </select>
+    <h2>Choose a court:</h2>
+      <select name="courts" method="GET" action="/">
+        <option value="{{courts[0]}}" selected>{{courts[0]}}</option>
+        {% for court in courts[1:] %}
+        <option value="{{court}}">{{court}}</option>
+        {% endfor %}
+      </select>
+      <h2>Enter Your Name:</h2>
+      <!-- <label for="cars">Enter Your Name:</label> -->
+      <input name="name" placeholder="name" type="text" />
+      <input type="submit" value="Register" />
+    </form>
+   
+    <br />
+    <div style="width: 100%; height: 400px;">
+      <img src="/static/availablecourts.jpg" alt="Norway"
+        style="float: left; width: 50%; height: 100%; object-fit: cover;" />
+      <img src="/static/availablecourts.jpg" alt="Paris"
+        style="float: left; width: 50%; height: 100%; object-fit: cover;" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<style>
+.libdrop {
+  background-color: lightgreen;
+  size: 40px;
+}
+.timedrop {
+  background-color: lightgreen;
+}
+</style>
+<html>
+<head>
+<title>Reserve</title>
+</head>
+<body style="background-color:coral;">
+
+<img src="https://bit.ly/3HwtIFV" height="200" width="350" alt="reserve">
+<form action="/search" method="POST">
+    <label for="Library">Select a library:</label>
+    <select name="Library" class="libdrop" style="width: 150px; height: 40px;">
+      <option disable selected value="Library">Library</option>
+      <option ="DSL">Dougherty Station Library</option>
+      <option ="SRL">San Ramon Library</option>
+    </select>
+    <label for="times">Select a Time:</label>
+    <select name="Available Times" class="timedrop" style="width: 150px; height: 40px;">
+      <option disable selected value="Available Times"
+        >Available Times</option
+      >
+      <option ="10-11AM">10-11AM</option>
+      <option ="11-12PM">11-12PM</option>
+      <option ="12-1PM">12-1PM</option>
+      <option ="1-2PM">1-2PM</option>
+      <option ="2-3PM">2-3PM</option>
+      <option ="3-4PM">3-4PM</option>
+    </select>
+    <input type="submit" value="Search" style="background-color: lightskyblue; height: 50px; border-color: black;
+     width: 100px; margin-left: 25px; border-width: thick;"/>
+
+
+</form>
+
+<p>Hello, just to let you know. Once you put in the time that you would like, you will be redirected to another page where it will show
+  you the Available rooms.
+</p>
+
+<div class="container">
+  <div class="center">
+    <button onclick="myFunction()">Redirect to Home Page</button>
+
+
+<script>
+function myFunction() {
+ location.replace("/dashboard/{{user}}")
+}
+
+</script>
+</body>
+</html>
